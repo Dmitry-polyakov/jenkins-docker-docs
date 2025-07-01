@@ -1,0 +1,59 @@
+site_name: Jenkins with Docker Documentation
+site_url: https://dmitry-polyakov.github.io/jenkins-docker-docs/
+site_description: Полное руководство по развертыванию Jenkins в Docker
+site_author: DevOps Team
+strict: false
+
+theme:
+  name: material
+  icon:
+    annotation: material/chevron-right-circle
+  features:
+    - navigation.tabs
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+    - header.autohide
+    - navigation.indexes
+    - navigation.expand
+    - navigation.tracking
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: annotate
+          class: annotate
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.emoji
+  - attr_list
+  - pymdownx.details
+  - toc:
+      permalink: true
+
+nav:
+  - 'Главная': 'index.md'
+  - 'Быстрый старт': '1_quickstart.md'
+  - 'Установка':
+    - 'Docker': '2_installations/docker.md'
+    - 'Jenkins': '2_installations/jenkins.md'
+  - 'Конфигурация':
+    - 'Безопасность': '3_configuration/security.md'
+    - 'Плагины': '3_configuration/plugins.md'
+    - 'Интеграция с Docker': '3_configuration/docker_integration.md'
+  - 'Использование':
+    - 'Пайплайны':
+      - 'Базовые': '4_usage/pipelines/basic.md'
+      - 'Продвинутые': '4_usage/pipelines/advanced.md'
+    - 'Решение проблем': '4_usage/troubleshooting.md'
+
+plugins:
+  - search
+  - mermaid2
+  - awesome-pages
+
+extra_css:
+  - assets/css/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css
